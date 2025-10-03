@@ -2,22 +2,36 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import {FaStar} from 'react-icons/fa'
+
+const createArray = (len) => [...Array(len)];
+
+function Star(params = {}){
+  const selected = params.selected
+  return (<FaStar color={selected? "red":"gray"} onClick={params.onSelect}/>);
+}
+
+function StarRating(params = {}){
+  const total = params.total || 5;
+  const [count, setCount] = useState(0);
+
+  return createArray(total).map(
+    (n, i)=>(
+    <Star key={i} selected={count>i} onSelect={()=>setCount(i+1)}/>
+    )
+  )
+}
 
 function App(){
-  const [checked, setChecked] = useState(false);
   return(
-    <div>
-      <input type="checkbox" value={checked}
-          onChange={() => setChecked(!checked)}></input>
-      <h1>{checked? "checked":"not checked"}</h1>
-    </div>
-  )
+    <StarRating total={8}/>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App name="Lei" task="learn react hooks"/>
+    <App />
   </React.StrictMode>
 );
 
