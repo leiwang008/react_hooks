@@ -8,7 +8,7 @@ function App(){
   console.log(status)
   return(
     <div>
-      The package is {status}.
+      <h1>The package is {status}.</h1>
       <button onClick={() => setStatus('delivered')}>Deliver</button>
     </div>
   )
