@@ -37,5 +37,17 @@
     flex-direction: column;
     gap: 0.75rem;
   }
+
+  .button-group button {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .winner-heading {
+    text-align: left;
+  }
+  
+
+  
   
   

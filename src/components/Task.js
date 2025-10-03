@@ -1,5 +1,5 @@
 // React 16.x code​​​​​​‌‌‌​​‌​‌​​‌‌​‌​​​‌​‌​‌​‌​ below
-import './task.css';
+import './comp.css';
 import React, { useState } from "react";
 
 // TaskItem component - displays an individual task with a checkbox

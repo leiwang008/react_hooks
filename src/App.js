@@ -1,6 +1,7 @@
 import './App.css';
 import StarRating from './components/Rating'
 import TaskList from './components/Task';
+import Winner from './components/Winner';
 
 function App(properties) {
   console.log("props: ", properties);
@@ -8,6 +9,7 @@ function App(properties) {
     <div className="App">
       <StarRating total={8}/>
       <TaskList></TaskList>
+      <Winner></Winner>
     </div>
   );
 }
