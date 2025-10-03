@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <h1>Hello Work!</h1>
+      <h1>Hello Work {props.name}!</h1>
     </div>
   );
 }
