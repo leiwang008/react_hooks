@@ -46,6 +46,19 @@
   .winner-heading {
     text-align: left;
   }
+
+  .user-list {
+    text-align: left;
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  .user-list li {
+    margin: 2px 0;
+    line-height: 1.2;
+  }
+  
+  
   
 
   
