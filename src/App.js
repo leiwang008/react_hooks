@@ -1,11 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import StarRating from './components/Rating'
+import TaskList from './components/Answer';
 
 function App(properties) {
   console.log("props: ", properties);
   return (
     <div className="App">
-      <h1>Hello {properties.name} {properties.task}!</h1>
+      <StarRating total={8}/>
+      <TaskList></TaskList>
     </div>
   );
 }
