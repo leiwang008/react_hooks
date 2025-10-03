@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+function App(){
+  const [status, setStatus] = useState("not delivered");
+  console.log(status)
+  return(
+    <div>
+      The package is {status}.
+      <button onClick={() => setStatus('delivered')}>Deliver</button>
+    </div>
+  )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App name="Lei"/>
+    <App name="Lei" task="learn react hooks"/>
   </React.StrictMode>
 );
 
