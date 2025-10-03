@@ -4,12 +4,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 function App(){
-  const [status, setStatus] = useState("not delivered");
-  console.log(status)
+  const [checked, setChecked] = useState(false);
   return(
     <div>
-      <h1>The package is {status}.</h1>
-      <button onClick={() => setStatus('delivered')}>Deliver</button>
+      <input type="checkbox" value={checked}
+          onChange={() => setChecked(!checked)}></input>
+      <h1>{checked? "checked":"not checked"}</h1>
     </div>
   )
 }
