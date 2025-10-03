@@ -4,13 +4,14 @@ import React, { useState } from "react";
 
 // TaskItem component - displays an individual task with a checkbox
 function TaskItem(props) {
-  // TODO: Implement the TaskItem component
   // It should display a task with a checkbox for completion status
   // When the checkbox is clicked, it should call a function passed via props
   return (
     <div className="task-item">
-      <input type="checkbox" onChange={(event) => props.onSelect(event.target.checked)}></input>
-      <div>props.taskName</div>
+      <input type="checkbox" 
+            checked={props.checked}
+            onChange={(event) => props.onSelect(event.target.checked)}></input>
+      <div>{props.taskName}</div>
     </div>
   );
 }
@@ -21,13 +22,11 @@ function TaskList() {
   const initialTasks = [
     { id: 1, name: "Learn React Hooks", completed: false },
     { id: 2, name: "Build a Task List", completed: false },
-    { id: 3, name: "Practice useState", completed: false }
+    { id: 3, name: "Practice useState", completed: true }
   ];
   
-  // TODO: Use the useState hook to manage the tasks array
   const [tasks, setTasks] = useState(initialTasks);
 
-  // TODO: Implement the toggleTask function
   const toggleTask = (taskId, selected) => {
     // This function should toggle the completed status of a task
     setTasks(
@@ -49,10 +48,12 @@ function TaskList() {
         {remainingTasks} {remainingTasks === 1 ? "task" : "tasks"} remaining
       </p>
       
-      {/* TODO: Render the list of TaskItem components */}
       <div className="task-list">
-        {initialTasks.map((task, i) =>(
-            <TaskItem key={i} taskName={task.name} onSelect={(selected)=>toggleTask(task.id, selected)} ></TaskItem>
+        {tasks.map((task, i) =>(
+            <TaskItem key={i} 
+            taskName={task.name} 
+            checked={task.completed} 
+            onSelect={(selected)=>toggleTask(task.id, selected)} />
         )
         )}
       </div>
