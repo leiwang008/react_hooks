@@ -43,7 +43,7 @@ function TaskList() {
 
   return (
     <div className="task-list-container">
-      <h1>Task List</h1>
+      <h2>Task List</h2>
       <p className="task-counter">
         {remainingTasks} {remainingTasks === 1 ? "task" : "tasks"} remaining
       </p>

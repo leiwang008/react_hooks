@@ -1,6 +1,6 @@
 import './App.css';
 import StarRating from './components/Rating'
-import TaskList from './components/Answer';
+import TaskList from './components/Task';
 
 function App(properties) {
   console.log("props: ", properties);

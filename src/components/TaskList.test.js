@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import TaskList from "./Answer";
+import TaskList from "./Task";
 
 test("Renders the Task List heading", () => {
   render(<TaskList />);
-  const headingElement = screen.getByRole('heading', { level: 1, name: /Task List/i });
+  const headingElement = screen.getByRole('heading', { level: 2, name: /Task List/i });
   expect(headingElement).toBeInTheDocument();
 });
 
