@@ -9,9 +9,12 @@ function TaskItem(props) {
   return (
     <div className="task-item">
       <input type="checkbox" 
-            checked={props.checked}
-            onChange={(event) => props.onSelect(event.target.checked)}></input>
-      <div>{props.taskName}</div>
+            checked={props.task.completed}
+            onChange={(event) => props.onSelect(event.target.checked)}
+            id={`check-task-${props.task.id}`}></input>
+      <label htmlFor={`check-task-${props.task.id}`}>
+        {props.task.name}
+      </label>
     </div>
   );
 }
@@ -49,10 +52,9 @@ function TaskList() {
       </p>
       
       <div className="task-list">
-        {tasks.map((task, i) =>(
-            <TaskItem key={i} 
-            taskName={task.name} 
-            checked={task.completed} 
+        {tasks.map(task =>(
+            <TaskItem key={task.id} 
+            task={task} 
             onSelect={(selected)=>toggleTask(task.id, selected)} />
         )
         )}
