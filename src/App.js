@@ -3,6 +3,7 @@ import StarRating from './components/Rating'
 import TaskList from './components/Task';
 import Winner from './components/Winner';
 import UserData from './components/UserData';
+import TimerData from './components/Timer';
 
 function App(properties) {
   console.log("props: ", properties);
@@ -15,6 +16,8 @@ function App(properties) {
       <Winner></Winner>
       <div className='divider'/>
       <UserData></UserData>
+      <div className='divider'/>
+      <TimerData/>
     </div>
   );
 }
