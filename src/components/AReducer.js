@@ -43,13 +43,10 @@ function AReducer(params = {}){
 
   return(
     <div className="font-sans max-w-md mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
-      <div className="bg-red-500 text-white p-4">
-        If you see a red box, Tailwind is working!
-      </div>
 
       {/* Counter Section */}
       <section>
-        <h2 className="text-lg font-semibold mb-2">Counter</h2>
+        <h2 className="text-lg font-semibold mb-2 text-left">Counter</h2>
         <button
           onClick={() => setCount(2)}
           className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
@@ -61,14 +58,14 @@ function AReducer(params = {}){
 
       {/* Toggle Section */}
       <section>
-        <h2 className="text-lg font-semibold mb-2">Toggle Checkbox</h2>
-        <div className="flex items-center space-x-2">
+        <h2 className="text-lg font-semibold mb-2 text-left">Toggle Checkbox</h2>
+        <div className="flex items-center justify-center space-x-2">
           <input
             type="checkbox"
             checked={checked}
             onChange={toggle}
             id="toggle_checkbox"
-            className="form-checkbox h-5 w-5 text-blue-600"
+            className="form-checkbox h-5 w-5 text-blue-600 text-center"
           />
           <label htmlFor="toggle_checkbox" className="text-gray-700">
             {checked ? "Checked" : "Unchecked"}
@@ -78,7 +75,7 @@ function AReducer(params = {}){
 
       {/* Message Section */}
       <section>
-        <h2 className="text-lg font-semibold mb-2">Send a Message</h2>
+        <h2 className="text-lg font-semibold mb-2 text-left">Send a Message</h2>
         <p className="mb-4">
           <strong>Message:</strong> {state.message}
         </p>
