@@ -8,6 +8,8 @@ import ComponentsByReducer from './components/ComponentsByReducer';
 import ColorPickerRef from './components/ColorPickerRef';
 import ColorPickerRef2 from './components/ColorPickerRef2';
 import ColorPickerCustomHook from './components/ColorPickerCustomHook';
+import ShowContextTree from './components/ShowContextTree';
+
 
 
 function App(properties) {
@@ -74,6 +76,20 @@ function App(properties) {
             <ColorPickerCustomHook/>
           </div>
         </div>
+
+        <div className="font-sans max-w-6xl mx-auto p-8 bg-gray-50 min-h-fit">
+          <h1 className="text-2xl font-bold mb-8 text-gray-800">
+            Component using <code className="bg-gray-200 px-1 rounded">createContext</code>
+          </h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <ShowContextTree/>
+            </section>
+          </div>
+        </div>
+
+        
 
 
       </div>
