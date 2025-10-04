@@ -42,24 +42,63 @@ function AReducer(params = {}){
   }
 
   return(
-    <>
-    {/* setCount is a reducer function */}
-    <button onClick={() => setCount(2)}>Increment Counter</button>
-    <div>counter: {count}</div>
+    <div className="font-sans max-w-md mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
+      <div className="bg-red-500 text-white p-4">
+        If you see a red box, Tailwind is working!
+      </div>
 
-    <br/>
-    <div>define a toggle reducer function for variable 'checked'</div>
-    <div>
-      <input type='checkbox' checked={checked} onChange={toggle} id="toggle_checkbox"/>
-      <label htmlFor='toggle_checkbox'>{checked? "checked":"unchecked"}</label>
+      {/* Counter Section */}
+      <section>
+        <h2 className="text-lg font-semibold mb-2">Counter</h2>
+        <button
+          onClick={() => setCount(2)}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Increment Counter
+        </button>
+        <div className="mt-2 text-gray-700">Counter: {count}</div>
+      </section>
+
+      {/* Toggle Section */}
+      <section>
+        <h2 className="text-lg font-semibold mb-2">Toggle Checkbox</h2>
+        <div className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={toggle}
+            id="toggle_checkbox"
+            className="form-checkbox h-5 w-5 text-blue-600"
+          />
+          <label htmlFor="toggle_checkbox" className="text-gray-700">
+            {checked ? "Checked" : "Unchecked"}
+          </label>
+        </div>
+      </section>
+
+      {/* Message Section */}
+      <section>
+        <h2 className="text-lg font-semibold mb-2">Send a Message</h2>
+        <p className="mb-4">
+          <strong>Message:</strong> {state.message}
+        </p>
+        <div className="space-x-4">
+          <button
+            onClick={() => dispatch({ type: "command" })}
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+          >
+            Command
+          </button>
+          <button
+            onClick={() => dispatch({ type: "salut" })}
+            className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
+          >
+            Salut
+          </button>
+        </div>
+      </section>
     </div>
 
-    <br/>
-    <div>define a reducer function to send message.</div> 
-    <p>Message: {state.message}</p>
-    <button onClick={() => dispatch({"type":"command"})}>Command</button>
-    <button onClick={() => dispatch({"type":"salut"})}>Salut</button>
-    </>
   );
 }
 
