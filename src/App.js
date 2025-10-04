@@ -4,6 +4,7 @@ import TaskList from './components/Task';
 import Winner from './components/Winner';
 import UserData from './components/UserData';
 import TimerData from './components/Timer';
+import AReducer from './components/AReducer';
 
 function App(properties) {
   console.log("props: ", properties);
@@ -18,6 +19,8 @@ function App(properties) {
       <UserData></UserData>
       <div className='divider'/>
       <TimerData/>
+      <div className='divider'/>
+      <AReducer/>
     </div>
   );
 }
