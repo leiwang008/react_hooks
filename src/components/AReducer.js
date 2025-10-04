@@ -13,6 +13,23 @@ function AReducer(params = {}){
     false
   );
 
+
+  // Action types
+  const ACTION_TYPE = {
+    COMMAND: 'COMMAND',
+    SALUT: 'SALUT'
+  };
+
+  class Action {
+    constructor(type) {
+      this.type = type;
+    }
+  }
+  const commandAction = new Action(ACTION_TYPE.COMMAND);
+  const salutAction = new Action(ACTION_TYPE.SALUT);  
+
+  // initial state for message reducer
+
   const initMessage = {
     "message": "hello"
   }
@@ -26,11 +43,11 @@ function AReducer(params = {}){
   function sendMessage(state, action) {
     console.log(`previous message ${state.message}`)
     switch(action.type) { // fixed typo: switch -> switch
-      case "command":
+      case ACTION_TYPE.COMMAND:
         return {
           message: "do homework!"
         };
-      case "salut":
+      case ACTION_TYPE.SALUT:
         return {
           message: "good morning."
         };
@@ -81,13 +98,13 @@ function AReducer(params = {}){
         </p>
         <div className="space-x-4">
           <button
-            onClick={() => dispatch({ type: "command" })}
+            onClick={() => dispatch(commandAction)}
             className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
           >
             Command
           </button>
           <button
-            onClick={() => dispatch({ type: "salut" })}
+            onClick={() => dispatch(salutAction)}
             className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded"
           >
             Salut
