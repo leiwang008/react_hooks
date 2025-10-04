@@ -21,10 +21,12 @@ function Winner(params = {}){
   return(
     <>
     <section>
-      <h1 className='winner-heading'>congradulation {winner}!</h1>
+      <h1 className='winner-heading'>congratulation {winner}!</h1>
       <div className='button-group'>
-        <button onClick={()=>setWinner("jerry")}>Change Winner</button>
-        <button onClick={()=>setLoggedIn(true)}>LogIn</button>
+        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded ml-2"
+                onClick={()=>setWinner("jerry")}>Change Winner</button>
+        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded ml-2" 
+                onClick={()=>setLoggedIn(true)}>LogIn</button>
       </div>
     </section>
     </>

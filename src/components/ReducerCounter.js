@@ -16,9 +16,9 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.INCREMENT:
-      return { count: state.count + 1 };
+      return {...state, count: state.count + 1 };
     case ACTIONS.DECREMENT:
-      return { count: state.count - 1 };
+      return {...state, count: state.count - 1 };
     default:
       return state;
   }
@@ -32,21 +32,17 @@ function ReducerCounter() {
   
   
   return (
-    <div className="font-sans max-w-md mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
-      <h1 className="text-lg font-semibold mb-2 text-left">Counter with useReducer</h1>
-      
-      {/* Display the current count */}
-      <div className="text-lg font-semibold mb-2 text-left">
-        current count: {state.count}
-      </div>
-      
-      {/* Add buttons that dispatch INCREMENT and DECREMENT actions */}
-      <div className="space-x-4">
-        <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" onClick={() => dispatch({"type": ACTIONS.INCREMENT})}>Increment</button>
-        <button className="bg-slate-500 hover:bg-slate-600 text-white px-4 py-2 rounded" onClick={() => dispatch({"type": ACTIONS.DECREMENT})}>Decrement</button>
-      </div>
-      
-    </div>
+        <section className="flex-1 min-w-[250px] bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-lg font-semibold mb-4 text-gray-800">Counter with useReducer</h2>
+          <p className="mb-4">
+            current count: {state.count}
+          </p>
+            {/* Add buttons that dispatch INCREMENT and DECREMENT actions */}
+            <div className="space-x-4">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" onClick={() => dispatch({"type": ACTIONS.INCREMENT})}>Increment</button>
+                <button className="bg-slate-500 hover:bg-slate-600 text-white px-4 py-2 rounded" onClick={() => dispatch({"type": ACTIONS.DECREMENT})}>Decrement</button>
+            </div>
+        </section>
   );
 }
 

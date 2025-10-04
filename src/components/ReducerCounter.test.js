@@ -17,7 +17,7 @@ console.error = (...args) => {
 
 test("Renders the Counter heading", () => {
   render(<ReducerCounter />);
-  const headingElement = screen.getByRole('heading', { level: 1 });
+  const headingElement = screen.getByRole('heading', { level: 2 });
   expect(headingElement).toHaveTextContent(/Counter with useReducer/i);
 });
 

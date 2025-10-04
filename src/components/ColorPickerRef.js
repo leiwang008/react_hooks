@@ -14,10 +14,10 @@ function ColorPickerRef(params = {}){
   }
   
   return(
-    <div className="font-sans max-w-md mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
 
-      {/* Color Picker Section */}
-      <section>
+
+      // Color Picker Section 
+      <section className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
         <h2 className="text-lg font-semibold mb-2 text-left">ColorPicker with useRef</h2>
         <form onSubmit={handleSubmit}>
           <input type='text' ref={desc} placeholder='sounds like ... '/>
@@ -29,7 +29,6 @@ function ColorPickerRef(params = {}){
 
       </section>
 
-    </div>
 
   );
 }

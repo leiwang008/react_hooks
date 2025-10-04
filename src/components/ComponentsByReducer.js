@@ -1,6 +1,7 @@
 import React, { useReducer} from 'react';
 import '../index.css';
 import './comp.css';
+import ReducerCounter from './ReducerCounter';
 
 
 function AReducer(params = {}){
@@ -58,12 +59,18 @@ function AReducer(params = {}){
     }
   }
 
-  return(
-    <div className="font-sans max-w-md mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
+ return (
+  <div className="font-sans max-w-6xl mx-auto p-8 bg-gray-50 min-h-fit">
+    <h1 className="text-2xl font-bold mb-8 text-gray-800">
+      Components implemented by <code className="bg-gray-200 px-1 rounded">useReducer</code>
+    </h1>
+
+    {/* Flex container for all sections */}
+    <div className="flex flex-wrap gap-6 justify-between">
 
       {/* Counter Section */}
-      <section>
-        <h2 className="text-lg font-semibold mb-2 text-left">Counter</h2>
+      <section className="flex-1 min-w-[250px] bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-lg font-semibold mb-4 text-gray-800">Counter</h2>
         <button
           onClick={() => setCount(2)}
           className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
@@ -73,16 +80,19 @@ function AReducer(params = {}){
         <div className="mt-2 text-gray-700">Counter: {count}</div>
       </section>
 
+      {/* Reducer Counter Section (assuming it's a separate component) */}
+      <ReducerCounter />
+
       {/* Toggle Section */}
-      <section>
-        <h2 className="text-lg font-semibold mb-2 text-left">Toggle Checkbox</h2>
-        <div className="flex items-center justify-center space-x-2">
+      <section className="flex-1 min-w-[250px] bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-lg font-semibold mb-4 text-gray-800">Toggle Checkbox</h2>
+        <div className="flex items-center space-x-3">
           <input
             type="checkbox"
             checked={checked}
             onChange={toggle}
             id="toggle_checkbox"
-            className="form-checkbox h-5 w-5 text-blue-600 text-center"
+            className="form-checkbox h-5 w-5 text-blue-600"
           />
           <label htmlFor="toggle_checkbox" className="text-gray-700">
             {checked ? "Checked" : "Unchecked"}
@@ -91,12 +101,12 @@ function AReducer(params = {}){
       </section>
 
       {/* Message Section */}
-      <section>
-        <h2 className="text-lg font-semibold mb-2 text-left">Send a Message</h2>
-        <p className="mb-4">
+      <section className="flex-1 min-w-[250px] bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-lg font-semibold mb-4 text-gray-800">Send a Message</h2>
+        <p className="mb-4 text-gray-700">
           <strong>Message:</strong> {state.message}
         </p>
-        <div className="space-x-4">
+        <div className="flex space-x-4">
           <button
             onClick={() => dispatch(commandAction)}
             className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
@@ -112,8 +122,9 @@ function AReducer(params = {}){
         </div>
       </section>
     </div>
+  </div>
+);
 
-  );
 }
 
 
