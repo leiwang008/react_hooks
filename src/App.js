@@ -9,7 +9,7 @@ import ColorPickerRef from './components/ColorPickerRef';
 import ColorPickerRef2 from './components/ColorPickerRef2';
 import ColorPickerCustomHook from './components/ColorPickerCustomHook';
 import ShowContextTree from './components/ShowContextTree';
-
+import ShowFetchData from './components/ShowFetchData';
 
 
 function App(properties) {
@@ -51,11 +51,15 @@ function App(properties) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <section className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <TimerData />
+            </section>
+
+            <section className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <UserData/>
             </section>
 
             <section className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <TimerData />
+              <ShowFetchData login="leiwang008" />
             </section>
           </div>
           
