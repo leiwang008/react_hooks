@@ -25,6 +25,8 @@ function TimerData() {
   const [seconds, setSeconds] = useState(0)
   const [loading, setLoading] = useState(true)
   const [timerData, setTimerData] = useState(null)
+
+  // initialize a ref to hold the current loading state
   const loadingRef = useRef(loading);
 
   //  make sure if loading change, the loadingRef will change too

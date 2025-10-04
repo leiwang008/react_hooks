@@ -5,6 +5,7 @@ import Winner from './components/Winner';
 import UserData from './components/UserData';
 import TimerData from './components/Timer';
 import AReducer from './components/AReducer';
+import ColorPickerRef from './components/ColorPickerRef';
 
 function App(properties) {
   console.log("props: ", properties);
@@ -21,6 +22,8 @@ function App(properties) {
       <TimerData/>
       <div className='divider'/>
       <AReducer/>
+      <div className='divider'/>
+      <ColorPickerRef/>
     </div>
   );
 }
