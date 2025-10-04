@@ -17,7 +17,7 @@ function StarRating(params = {}){
     <>
     {createArray(total).map(
       (n, i)=>(
-      <Star key={i} selected={count>i} onSelect={()=>setCount(i+1)}/>
+      <Star key={i} selected={count > i} onSelect={()=>setCount(i+1)}/>
       )
     )}
     <div>{count} out of {total} stars have been selected.</div>
