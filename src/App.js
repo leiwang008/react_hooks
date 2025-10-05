@@ -10,7 +10,7 @@ import ColorPickerRef2 from './components/ColorPickerRef2';
 import ColorPickerCustomHook from './components/ColorPickerCustomHook';
 import ShowContextTree from './components/ShowContextTree';
 import ShowFetchData from './components/ShowFetchData';
-
+import SettingManager from './components/SettingManager';
 
 function App(properties) {
   console.log("props: ", properties);
@@ -90,11 +90,11 @@ function App(properties) {
             <section className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <ShowContextTree/>
             </section>
+            <section className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-2">
+              <SettingManager/>
+            </section>
           </div>
         </div>
-
-        
-
 
       </div>
     </div>

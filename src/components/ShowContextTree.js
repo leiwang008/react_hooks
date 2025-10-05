@@ -7,12 +7,20 @@ function ShowContextTree(params = {}){
   console.log("ShowContextTree: trees from context", result);
 
   return (
-    <div>
-      <div className="text-lg font-semibold mb-2 text-left">{result.length} Context Tree Data.</div>
-      <div > {/* add flex and spacing here */}
-        {result.map((tree) => (<li key={tree.id}>{tree.name} </li>))}
-      </div>
+  <div>
+    <div className="text-lg font-semibold mb-4 text-left">
+      {result.length} Context Tree {result.length === 1 ? "Item" : "Items"}
     </div>
+
+    <ul className="space-y-2 list-disc list-inside text-gray-800 text-left">
+      {result.map((tree) => (
+        <li key={tree.id} className="pl-2">
+          {tree.name}
+        </li>
+      ))}
+    </ul>
+  </div>
+
   );
   
 }
