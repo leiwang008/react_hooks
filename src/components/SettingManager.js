@@ -1,5 +1,7 @@
 // React 16.x code​​​​​​‌‌‌​​‌​‌​‌​​‌​​‌​​‌‌‌‌‌‌‌ below
-import React, { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext } from "react";
+import CheckboxRound from './checkbox/CheckboxRound';
+import OnOffLabel from "./label/OnOffLabel";
 
 // Default settings
 const defaultSettings = {
@@ -62,31 +64,13 @@ function SettingsControls() {
         {/* Notifications Toggle */}
         <div className="flex items-center justify-between">
             <span className="text-gray-700">Notifications</span>
-            <label className="relative inline-flex items-center cursor-pointer">
-            <input
-                type="checkbox"
-                checked={settings.notifications}
-                onChange={toggleNotifications}
-                className="sr-only peer"
-            />
-            <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer peer-checked:bg-blue-600 transition-all duration-300"></div>
-            <div className="absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full transition-transform duration-300 peer-checked:translate-x-full"></div>
-            </label>
+            <CheckboxRound  checked={settings.notifications} onChange={toggleNotifications} />
         </div>
 
         {/* Dark Mode Toggle */}
         <div className="flex items-center justify-between">
             <span className="text-gray-700">Dark Mode</span>
-            <label className="relative inline-flex items-center cursor-pointer">
-            <input
-                type="checkbox"
-                checked={settings.darkMode}
-                onChange={toggleDarkMode}
-                className="sr-only peer"
-            />
-            <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer peer-checked:bg-blue-600 transition-all duration-300"></div>
-            <div className="absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full transition-transform duration-300 peer-checked:translate-x-full"></div>
-            </label>
+            <CheckboxRound checked={settings.darkMode} onChange={toggleDarkMode} />
         </div>
     </div>
 
@@ -105,21 +89,11 @@ function DisplaySettings() {
     <ul className="space-y-2">
         <li className="flex items-center justify-between">
         <span className="text-gray-700">Notifications</span>
-        <span
-            className={`text-xs font-medium px-2 py-1 rounded-full 
-            ${settings.notifications ? "bg-green-100 text-green-700" : "bg-gray-200 text-gray-600"}`}
-        >
-            {settings.notifications ? "On" : "Off"}
-        </span>
+          <OnOffLabel isOn={settings.notifications} />
         </li>
         <li className="flex items-center justify-between">
-        <span className="text-gray-700">Dark Mode</span>
-        <span
-            className={`text-xs font-medium px-2 py-1 rounded-full 
-            ${settings.darkMode ? "bg-green-100 text-green-700" : "bg-gray-200 text-gray-600"}`}
-        >
-            {settings.darkMode ? "On" : "Off"}
-        </span>
+          <span className="text-gray-700">Dark Mode</span>
+          <OnOffLabel isOn={settings.darkMode} />
         </li>
     </ul>
     </div>
@@ -136,7 +110,6 @@ function SettingManager() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SettingsControls />
-
             <DisplaySettings />
         </div>
       </div>
